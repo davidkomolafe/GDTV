@@ -32,7 +32,7 @@ const protect = asyncHandler(async (req, res, next) => {
     }
   }
   // if token doesn't exist in headers send error
-  if (!token) S{
+  if (!token) {
     res.status(401);
     throw new Error("Not authorized, no token");
   }

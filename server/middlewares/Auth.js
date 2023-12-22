@@ -12,11 +12,10 @@ const generateToken = (id) => {
 // protection middleware
 const protect = asyncHandler(async (req, res, next) => {
   let token;
+  const bearerHeader = req.headers["authorization"];
+
   // check if token exists in headers
-  if (
-    req.headers.authorization &&
-    req.headers.authorization.startsWith("Bearer")
-  ) {
+  if (bearerHeader) {
     // set token from Bearer token in header
     try {
       token = req.headers.authorization.split("")[1];

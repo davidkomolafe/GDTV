@@ -7,7 +7,7 @@ const Header = () => {
   return (
     <div className="sticky z-10 top-0">
       <header className="relative flex items-center justify-between px-10 top-0 h-40 bg-header text-textColor ">
-        <img src={logo} alt="" className="left-16 w-16 ml-7" />
+        <img src={logo} alt="" className="left-16 w-16 ml-7 max-[450px]:ml-0" />
         <ul className="flex flex-row gap-10 left-30 items-center justify-center text-3xl cursor-pointer max-[450px]:hidden">
           <li className="hover:text-accent">Popular</li>
           <li className="hover:text-accent">Films</li>

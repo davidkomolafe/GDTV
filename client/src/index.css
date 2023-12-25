@@ -12,7 +12,14 @@ body {
 }
 
 html {
-  font-size: 11px;
+  font-size: 62.5%;
+  color: #0b0b0b28;
+}
+
+@media screen and (max-width: 450px) {
+  html {
+    font-size: 56%;
+  }
 }
 
 @tailwind base;

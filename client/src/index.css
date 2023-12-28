@@ -11,6 +11,10 @@ body {
   scroll-behavior: smooth;
 }
 
+body::-webkit-scrollbar {
+  display: none;
+}
+
 html {
   font-size: 62.5%;
   color: #0b0b0b28;

@@ -5,6 +5,7 @@ import SignUp from "./Screens/SignUp/SignUp";
 import Login from "./Screens/Login/Login";
 import Layout from "./Layout/Layout";
 import Catalog from "./Screens/Catalog/Catalog";
+import Film from "./Screens/Film/Film";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/*" element={<Layout />} />
         <Route path="/catalog" element={<Catalog />} />
+        <Route path="/film" element={<Film />} />
       </Routes>
     </Router>
   );

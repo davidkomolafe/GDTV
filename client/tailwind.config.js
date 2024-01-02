@@ -21,7 +21,7 @@ module.exports = {
         "hero-hps": "url('../src/Assets/img/bg2.jpg')",
       },
       padding: {
-        50: "12rem",
+        12: "4rem",
         15: "15rem",
         20: "20rem",
         25: "25rem",
@@ -35,7 +35,14 @@ module.exports = {
       },
       borderWidth: {
         30: "30rem",
+        6: "6.5rem",
         1: "0.2rem",
+      },
+      scale: {
+        1: "1.02",
+      },
+      spacing: {
+        navigate: "6.45rem",
       },
       width: {
         15: "15rem",
@@ -48,6 +55,7 @@ module.exports = {
         55: "55rem",
         watch: "13rem",
       },
+
       height: {
         hero: "70vh",
         height: "60vh",

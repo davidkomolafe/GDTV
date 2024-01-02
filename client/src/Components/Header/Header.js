@@ -2,40 +2,55 @@ import React from "react";
 import logo from "../../Assets/img/logo.png";
 import profile from "../../Assets/img/photo.png";
 import { HiMenuAlt3, HiOutlineSearch } from "react-icons/hi";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const Header = () => {
+  const hover = "hover:text-accent text-textColor";
+  const Hover = ({ isActive }) => (isActive ? "text-accent" : hover);
   return (
-    <div className="sticky z-10 top-0">
-      <header className="relative flex items-center justify-between px-10 top-0 h-40 bg-header text-textColor ">
-        <img src={logo} alt="" className="left-16 w-16 ml-7 max-[450px]:ml-0" />
-        <ul className="flex flex-row gap-10 left-30 items-center justify-center text-3xl cursor-pointer max-[450px]:hidden">
-          <Link to="/popular">
-            <li className="hover:text-accent">Popular</li>
-          </Link>
-          <Link to="/film">
-            <li className="hover:text-accent">Films</li>
-          </Link>
-          <Link to="/tv-series">
-            <li className="hover:text-accent">TV series</li>
-          </Link>
-          <Link to="/catalog">
-            <li className="hover:text-accent">Catalog</li>
-          </Link>
+    <>
+      <header className="sticky z-20 bg-header top-0 text-textColor text-2xl flex items-center justify-between px-10 h-36 max-[450px]:h-32">
+        <Link to="/">
+          <img
+            src={logo}
+            alt=""
+            className="left-16 w-16 ml-7 max-[450px]:ml-0 max-[450px]:w-12"
+          />
+        </Link>
+        <ul className="flex flex-row gap-14 left-30 items-center justify-center max-[450px]:hidden">
+          <NavLink className={Hover} to="/popular">
+            <li>Popular</li>
+          </NavLink>
+          <NavLink className={Hover} to="/film">
+            <li>Films</li>
+          </NavLink>
+          <NavLink className={Hover} to="/tv-series">
+            <li>TV series</li>
+          </NavLink>
+          <NavLink className={Hover} to="/catalog">
+            <li>Catalog</li>
+          </NavLink>
         </ul>
-        <div className="text-3xl flex flex-row items-center gap-10">
-          <p className="text-2xl px-7 py-3.5 bg-accent rounded-3xl transition delay-100 ease-in hover:scale-75 hover:outline-double outline-accent max-[450px]:hidden ">
-            Premium
-          </p>
-          <div className="flex flex-row items-center gap-5 max-[450px]:flex-row-reverse">
-            <img className="w-16 max-[450px]:w-14" src={profile} alt="" />
-            <h3 className="text-3xl ">David Komolafe</h3>
+        <div className="text-2xl flex flex-row items-center justify-center gap-6">
+          <Link to="/">
+            <p className="px-7 py-3 bg-accent rounded-2xl hover:outline-double outline-accent max-[450px]:hidden ">
+              Premium
+            </p>
+          </Link>
+
+          <div className="cursor-pointer flex flex-row items-center justify-center gap-6">
+            <img
+              className="w-16 rounded-full hover:outline outline-offset-2 outline-1 outline-accent max-[450px]:w-12"
+              src={profile}
+              alt="user-profile"
+            />
+            {/* <h3 className="text-3xl ">David Komolafe</h3> */}
+            <HiOutlineSearch className="cursor-pointer teext-3xl max-[450px]:hidden" />
+            <HiMenuAlt3 className="hidden text-3xl max-[450px]:block" />
           </div>
-          <HiOutlineSearch className=" max-[450px]:hidden" />
-          <HiMenuAlt3 />
         </div>
       </header>
-    </div>
+    </>
   );
 };
 

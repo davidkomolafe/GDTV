@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 
 const Banner = () => {
   return (
-    <div className="relative w-full h-hero">
+    <div className="relative w-full h-hero ">
       <Swiper
         direction="vertical"
         slidesPerView={1}

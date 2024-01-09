@@ -6,6 +6,7 @@ import Login from "./Screens/Login/Login";
 import Layout from "./Layout/Layout";
 import Catalog from "./Screens/Catalog/Catalog";
 import Film from "./Screens/Film/Film";
+import MoviesPage from "./Screens/Movies";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/*" element={<Layout />} />
         <Route path="/catalog" element={<Catalog />} />
         <Route path="/film" element={<Film />} />
+        <Route path="/movies" element={<MoviesPage />} />
       </Routes>
     </Router>
   );

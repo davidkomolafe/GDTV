@@ -1,37 +1,28 @@
 import React from "react";
 import Header from "../../Components/Header/Header";
-import { MdKeyboardArrowDown } from "react-icons/md";
+import Filters from "./Filters";
+import { Movies } from "../../Data/MovieData";
+import NewFilmCard from "../../Components/Cards/NewFilmCard";
+// import TrendsCard from "../../Components/Cards/TrendsCard";
+// import PopularCard from "../../Components/Cards/PopularCard";
+// import PopularFilmCard from "../../Components/Cards/PopularFilmCard";
 
 const Catalog = () => {
   return (
-    <div className="h-screen bg-backgroundColor">
+    <div className="min-h-screen bg-hero">
       <Header />
-      <ul className="flex gap-10 justify-center items-center text-2xl h-32 w-full text-textColor">
-        <ul className="flex items-center justify-between gap-7 rounded-2xl  border divide-x-2">
-          <li className="px-5 py-3">Catalog</li>
-          <li className="cursor-pointer px-4 py-3 text-3xl">
-            <MdKeyboardArrowDown />
-          </li>
-        </ul>
-        <ul className="flex items-center justify-between gap-7 rounded-2xl divide-x-2 border">
-          <li className="px-5 py-3">Sort By Year</li>
-          <li className="cursor-pointer px-4 py-3 text-3xl">
-            <MdKeyboardArrowDown />
-          </li>
-        </ul>
-        <ul className="flex items-center justify-between gap-7 rounded-2xl divide-x-2 border">
-          <li className="px-5 py-3">Sort By Hours</li>
-          <li className="cursor-pointer px-4 py-3 text-3xl">
-            <MdKeyboardArrowDown />
-          </li>
-        </ul>
-        <ul className="flex items-center justify-between gap-7 rounded-2xl divide-x-2 border">
-          <li className="px-5 py-3">Sort By Rating</li>
-          <li className="cursor-pointer px-4 py-3 text-3xl">
-            <MdKeyboardArrowDown />
-          </li>
-        </ul>
-      </ul>
+      <Filters />
+      <p className="text-lg font-medium my-6">
+        Total{" "}
+        <span className="font-bold text-accent" {...Movies?.length}>
+          Items found
+        </span>
+      </p>
+      <div className="grid sm:mt-10 mt-6 xl:grid-cols-4 2xl:grid-cols-5 lg:grid-cols-3 sm:grid-cols-2 gap-6">
+        {Movies.map((movie, index) => (
+          <NewFilmCard key={index} movie={movie} />
+        ))}
+      </div>
     </div>
   );
 };

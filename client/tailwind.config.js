@@ -12,7 +12,7 @@ module.exports = {
         primary: "#F5F3F3",
         accent: "#C11515",
         header: "#101010",
-        hero: "#171717",
+        hero: "#161616",
         popular: "#2A2D34",
       },
       backgroundImage: {
@@ -53,6 +53,7 @@ module.exports = {
         40: "40rem",
         45: "45rem",
         55: "55rem",
+        70: "80rem",
         watch: "13rem",
       },
 
